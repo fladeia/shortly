@@ -1,3 +1,101 @@
+.App-header {
+  max-width: 1400px;
+  height: 85vh;
+  background-image: url('./assets/images/illustration-working.svg');
+  background-repeat: no-repeat;
+  background-position: right;
+  display: grid;
+  grid-template-rows: 1fr 2fr 1fr;
+  padding: 0 8%;
+
+  background-color: rgb(214, 214, 214);
+}
+
+/* App-nav-desktop */
+.App-header .App-nav-desktop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  background-color: rgba(15, 248, 170, 0.781);
+}
+
+.App-header .App-nav-desktop .logo-items {
+  display: flex;
+  justify-content: space-between;
+  width: 44%;
+}
+
+.App-header .App-nav-desktop .logo-items .nav-items {
+  
+}
+
+.App-header .App-nav-desktop .logo-items ol {
+  /* margin-left: 24px; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.App-header .App-nav-desktop .login-singUp {
+
+}
+
+.App-header .App-nav-desktop .nav-items {
+  display: flex;
+  list-style-type: none;
+}
+
+
+
+
+
+
+
+
+/* hero */
+.App-header .hero{
+
+
+  background-color: rgba(15, 248, 170, 0.486);
+  
+}
+
+/* shortIt */
+.App-header .shortIt {
+
+
+  background-color: rgba(15, 248, 170, 0.151);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* .App {
   text-align: center;
 }

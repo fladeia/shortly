@@ -1,12 +1,46 @@
-// import logo from './logo.svg';
 import './App.css';
+import logo from './assets/images/logo.svg'
 
-function App() {
+function Header() {
+  return (
+  <div className="App-header">
+
+    <nav className="App-nav-desktop">
+      <div className="logo-items">
+        <img src={logo} alt="logo" className="logo" />
+          <ol className="nav-items">
+            <li>Features</li>
+            <li>Pricing</li>
+            <li>Resources</li>
+          </ol>
+      </div>
+      <div className="login-singUp">
+        <span className="login">Login</span>
+        <button>Sign Up</button>
+      </div>
+    </nav>
+
+    <div className="hero">
+      <h1>More than just shorter links</h1>
+      <p>Build your brand’s recognition and get detailed insights 
+      on how your links are performing.</p>
+      <button>Get Started</button>
+    </div>
+
+    <div className="shortIt">
+      <input type="text" placeholder="Shorten a link here..." />
+      <button>Shorten It!</button>
+    </div>
+
+  </div>
+  )
+}
+
+export function App() {
   return (
     <>  
-      <h1>Helloo</h1>
+      <Header></Header>
     </>
-
 
 
     // <div className="App">
@@ -27,5 +61,3 @@ function App() {
     // </div>
   );
 }
-
-export default App;
