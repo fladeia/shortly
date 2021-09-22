@@ -3,7 +3,7 @@
   height: 85vh;
   background-image: url('./assets/images/illustration-working.svg');
   background-repeat: no-repeat;
-  background-position: right;
+  background-position: center right -100px;
   display: grid;
   grid-template-rows: 1fr 2fr 1fr;
   padding: 0 8%;
@@ -13,8 +13,8 @@
 
 /* App-nav-desktop */
 .App-header .App-nav-desktop {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
   align-items: center;
   
   background-color: rgba(15, 248, 170, 0.781);
@@ -22,11 +22,13 @@
 
 .App-header .App-nav-desktop .logo-items {
   display: flex;
-  justify-content: space-between;
-  width: 44%;
+  flex-direction: row;
 }
 
 .App-header .App-nav-desktop .logo-items .nav-items {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
   
 }
 
