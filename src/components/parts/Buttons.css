@@ -1,0 +1,18 @@
+.btn-sign-up, .btn-get-starter {
+    width: 108px;
+    padding: 11px;
+    border-radius: 28px;
+    border: none;
+    background-color: var(--cyan);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.btn-get-starter {
+    width: 192px;
+    padding: 16px;
+    font-size: 1.2rem;
+    margin-top: 36px;
+}
