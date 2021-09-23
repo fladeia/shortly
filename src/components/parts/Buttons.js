@@ -8,7 +8,7 @@ function ButtonSignUp() {
     )
 }
 
-function ButtonGetStartes() {
+function ButtonGetStarted() {
     return (
         <>
             <button className="btn-get-starter">Get Started</button>
@@ -16,4 +16,4 @@ function ButtonGetStartes() {
     )
 }
 
-export {ButtonSignUp, ButtonGetStartes}
+export {ButtonSignUp, ButtonGetStarted}

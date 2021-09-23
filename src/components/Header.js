@@ -1,6 +1,6 @@
 import './Header.css'
 import logo from '../assets/images/logo.svg'
-import { ButtonSignUp, ButtonGetStartes } from './parts/Buttons'
+import { ButtonSignUp, ButtonGetStarted } from './parts/Buttons'
 
 export function Header() {
     return (
@@ -24,7 +24,7 @@ export function Header() {
           <h1>More than just shorter links</h1>
           <p>Build your brand’s recognition and get detailed <br /> insights 
           on how your links are performing.</p>
-            <ButtonGetStartes></ButtonGetStartes>
+            <ButtonGetStarted></ButtonGetStarted>
         </div>
         <div className="shortIt">
           <input type="text" placeholder="Shorten a link here..." />
