@@ -12,7 +12,7 @@ footer {
 
 .footer {
     width: 77%;
-    height: 310px;
+    height: 244px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -21,11 +21,30 @@ footer {
 
 .footer .footer-nav {
     display: flex;
-    width: 50%;
+    width: 70%;
     justify-content: space-around;
 }
 
 .footer-nav ul {
     list-style-type: none;
 
+}
+
+.nav-list li {
+    font-size: 0.9rem;
+    color: var(--gray);
+    margin-bottom: 8px;
+}
+
+.nav-list .head {
+    font-size: 1rem;
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+.social-icons {
+    width: 24%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
 }

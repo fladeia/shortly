@@ -11,7 +11,7 @@ export function Footer() {
             <div className="footer">
                 <img src={logo} className="logo"></img>
                 <div className="footer-nav">
-                    <div className="features">
+                    <div className="nav-list">
                         <ul>
                             <li className="head">Features</li>
                             <li>Link Shortening</li>
@@ -19,7 +19,7 @@ export function Footer() {
                             <li>Analitics</li>
                         </ul>
                     </div>
-                    <div className="resources">
+                    <div className="nav-list">
                         <ul>
                             <li className="head">Resources</li>
                             <li>Blog</li>
@@ -27,7 +27,7 @@ export function Footer() {
                             <li>Support</li>
                         </ul>
                     </div>
-                    <div className="company">
+                    <div className="nav-list">
                         <ul>
                             <li className="head">Company</li>
                             <li>About</li>
