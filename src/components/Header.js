@@ -11,8 +11,11 @@ export function Header() {
   const clickHandler = (e) => {
     e.preventDefault()
     setShortenItUrl(searchUrl.current.value)
+
+    fetch(`https://api.shrtco.de/v2/shorten?url=${shortenItUrl}`)
+    .then(res => res.json())
+    .then(data => console.log(data.result.code["short_link"]))
   }
-  console.log(shortenItUrl);
 
     return (
     <div className="App-header">
