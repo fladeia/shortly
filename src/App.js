@@ -5,6 +5,7 @@ import { Section1 } from './components/Section1.js';
 import { Section2 } from './components/Section2.js';
 
 export function App() {
+  
   return (
     <>  
       <Header></Header>

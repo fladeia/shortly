@@ -1,8 +1,19 @@
+import React, { useRef, useState } from 'react'
 import './Header.css'
 import logo from '../assets/images/logo.svg'
 import { ButtonSignUp, ButtonGetStarted } from './parts/Buttons'
 
 export function Header() {
+
+  const searchUrl = useRef('')
+  const [ shortenItUrl, setShortenItUrl ] = useState('') 
+
+  const clickHandler = (e) => {
+    e.preventDefault()
+    setShortenItUrl(searchUrl.current.value)
+  }
+  console.log(shortenItUrl);
+
     return (
     <div className="App-header">
       <div className="header-container">
@@ -27,8 +38,11 @@ export function Header() {
             <ButtonGetStarted></ButtonGetStarted>
         </div>
         <div className="shortIt">
-          <input type="text" placeholder="Shorten a link here..." />
-          <button className="btn-shorten-it">Shorten It!</button>
+          <form>
+            <label htmlFor="name">Url shorten it</label>
+            <input type="text" id="name" ref={searchUrl} placeholder="Shorten a link here..." />
+            <button className="btn-shorten-it" onClick={clickHandler}>Shorten It!</button>
+          </form>
         </div>
       </div>
     </div>

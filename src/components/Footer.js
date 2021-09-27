@@ -9,7 +9,7 @@ export function Footer() {
     return (
         <footer>
             <div className="footer">
-                <img src={logo} className="logo"></img>
+                <img src={logo} className="logo" alt="logo"></img>
                 <div className="footer-nav">
                     <div className="nav-list">
                         <ul>
@@ -37,10 +37,10 @@ export function Footer() {
                         </ul>
                     </div>
                 <div className="social-icons">
-                    <img src={iconFacebook}></img>
-                    <img src={iconTwitter}></img>
-                    <img src={iconPinterest}></img>
-                    <img src={iconInstagram}></img>
+                    <img src={iconFacebook} alt="facebook"></img>
+                    <img src={iconTwitter} alt="twitter"></img>
+                    <img src={iconPinterest} alt="pinterest"></img>
+                    <img src={iconInstagram} alt="instagram"></img>
                 </div>
                 </div>
             </div>

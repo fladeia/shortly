@@ -20,7 +20,7 @@ export function Section1() {
   
           <div className="cards">
             <div className="card">
-              <img src={iconBrandRrecognition} />
+              <img src={iconBrandRrecognition} alt="icon-recognition"/>
               <span>
                 Brand Recognition
               </span>
@@ -30,7 +30,7 @@ export function Section1() {
               </p>
             </div>
             <div className="card">
-              <img src={iconDetailedRecords} />
+              <img src={iconDetailedRecords} alt="icon-records"/>
               <span>
                 Detailed Records
               </span>
@@ -40,7 +40,7 @@ export function Section1() {
               </p>
             </div>
             <div className="card">
-              <img src={iconFullyCustomizable} />
+              <img src={iconFullyCustomizable} alt="icon-customizable"/>
               <span>
                 Fully Customizable
               </span>
