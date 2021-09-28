@@ -15,7 +15,6 @@ export function Header() {
     .then(res => res.json())
     .then(data => {
       setUrlList([...urlList, {reqUrl: searchUrl.current.value, shortUrl: data.result.short_link2}])
-      // setUrlList({...urlList, reqUrl: searchUrl.current.value, shortUrl: data.result.short_link2})
     })
   }
 
