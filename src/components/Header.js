@@ -8,13 +8,15 @@ export function Header() {
 
   const searchUrl = useRef('')
 
-  const [ urlList, setUrlList ] = useState([{reqUrl: '', shortUrl: ''}])
+  const [ urlList, setUrlList ] = useState([{key: '', reqUrl: '', shortUrl: ''}])
 
   const fetchData = () => {
     fetch(`https://api.shrtco.de/v2/shorten?url=${searchUrl.current.value}`)
     .then(res => res.json())
     .then(data => {
-      setUrlList([...urlList, {reqUrl: searchUrl.current.value, shortUrl: data.result.short_link2}])
+      setUrlList([...urlList, {key: data.result.code, reqUrl: searchUrl.current.value, shortUrl: data.result.short_link2}])
+      console.log(data);
+      console.log(data.result.code);
     })
   }
 
@@ -56,7 +58,15 @@ export function Header() {
             <button className="btn-shorten-it" onClick={clickHandler}>Shorten It!</button>
           </form>
         </div>
-        <div className="shorten">{urlList.map(item => <Results item1={item.reqUrl} item2={item.shortUrl}></Results>)}</div>
+        
+          {urlList.map((item) => {
+            if(item.reqUrl === '') {
+              return false
+            } else {
+              return <div className="shorten" key={item.key}><Results  item1={item.reqUrl} item2={item.shortUrl} ></Results></div>
+            }
+          })}
+        
       </div>
     </div>
   )

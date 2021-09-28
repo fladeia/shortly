@@ -16,10 +16,15 @@ function ButtonGetStarted() {
     )
 }
 
-function ButtonCopy() {
+function ButtonCopy({ clipboard }) {
+
+    const btnHandle = () => {
+        navigator.clipboard.writeText(clipboard)
+    }
+
     return (
         <>
-            <button className="btn-copy">Copy</button>
+            <button className="btn-copy" onClick={btnHandle}>Copy</button>
         </>
     )
 }
