@@ -2,31 +2,29 @@ import React, { useRef, useState } from 'react'
 import './Header.css'
 import logo from '../assets/images/logo.svg'
 import { ButtonSignUp, ButtonGetStarted } from './parts/Buttons'
+import { Results } from './Results'
 
 export function Header() {
 
   const searchUrl = useRef('')
 
-  const [ requiredUrl, setRequiredUrl ] = useState('https://www.google.com') 
-  const [ requeredUrlList, setrequeredUrlList ] = useState([])
-  const [ shortenList, setShortenList ] = useState([])
+  const [ urlList, setUrlList ] = useState([])
 
   const fetchData = () => {
-    fetch(`https://api.shrtco.de/v2/shorten?url=${requiredUrl}`)
+    fetch(`https://api.shrtco.de/v2/shorten?url=${searchUrl.current.value}`)
     .then(res => res.json())
     .then(data => {
-      setrequeredUrlList([...requeredUrlList, requiredUrl])
-      setShortenList([...shortenList, data.result.short_link2])
-      console.log(shortenList)
-      console.log(requeredUrlList)
+      setUrlList([...urlList, data.result.short_link2])
     })
   }
 
+  
   const clickHandler = (e) => {
     e.preventDefault()
-    setRequiredUrl(searchUrl.current.value)
-    // console.log(requiredUrl);
-    fetchData()
+    if(searchUrl.current.value === "") {
+    } else {
+      fetchData()
+    }
   }
 
   return (
@@ -59,10 +57,8 @@ export function Header() {
             <button className="btn-shorten-it" onClick={clickHandler}>Shorten It!</button>
           </form>
         </div>
-        <div className="shorten">{
-          shortenList.map(shorten => <h3>{shorten}</h3>)
-        }</div>
+        <div className="shorten">{urlList.map(item => <Results item={item}></Results>)}</div>
       </div>
     </div>
-    )
-  }
+  )
+}

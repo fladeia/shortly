@@ -1,0 +1,12 @@
+.results-container {
+    padding: 16px;
+    margin-block: 8px;
+    border-radius: px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+
+.shortenIt {
+    display: flex;
+}

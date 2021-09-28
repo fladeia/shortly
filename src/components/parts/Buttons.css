@@ -1,4 +1,4 @@
-.btn-sign-up, .btn-get-starter {
+.btn-sign-up, .btn-get-starter, .btn-copy {
     width: 108px;
     padding: 11px;
     border-radius: 28px;
@@ -15,4 +15,12 @@
     padding: 16px;
     font-size: 1.2rem;
     margin-top: 36px;
+}
+
+.btn-copy {
+    width: 86px;
+    padding: 8px;
+    font-size: 0.9rem;
+    
+    border-radius: 4px;
 }

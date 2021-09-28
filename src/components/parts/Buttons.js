@@ -16,4 +16,12 @@ function ButtonGetStarted() {
     )
 }
 
-export {ButtonSignUp, ButtonGetStarted}
+function ButtonCopy() {
+    return (
+        <>
+            <button className="btn-copy">Copy</button>
+        </>
+    )
+}
+
+export {ButtonSignUp, ButtonGetStarted, ButtonCopy}
