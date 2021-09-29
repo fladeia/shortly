@@ -114,6 +114,10 @@ input {
   color: var(--gray);
 }
 
+.inputErr {
+  border:1px solid red;
+}
+
 .btn-shorten-it {
   margin-left: 24px;
   padding: 18px 34px;

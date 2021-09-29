@@ -7,22 +7,21 @@ import { Results } from './Results'
 export function Header() {
 
   const searchUrl = useRef('')
-
   const [ urlList, setUrlList ] = useState([{key: '', reqUrl: '', shortUrl: ''}])
+  const [ inputError, setInputError] = useState('')
 
   const fetchData = () => {
     fetch(`https://api.shrtco.de/v2/shorten?url=${searchUrl.current.value}`)
     .then(res => res.json())
     .then(data => {
       setUrlList([...urlList, {key: data.result.code, reqUrl: searchUrl.current.value, shortUrl: data.result.short_link2}])
-      console.log(data);
-      console.log(data.result.code);
     })
   }
 
   const clickHandler = (e) => {
     e.preventDefault()
     if(searchUrl.current.value === "") {
+      setInputError('inputErr')
     } else {
       fetchData()
     }
@@ -54,7 +53,7 @@ export function Header() {
         <div className="shortIt">
           <form>
             <label htmlFor="name"></label>
-            <input type="text" id="name" ref={searchUrl} placeholder="Shorten a link here..." />
+            <input type="text" className={inputError} id="name" ref={searchUrl} placeholder="Shorten a link here..." />
             <button className="btn-shorten-it" onClick={clickHandler}>Shorten It!</button>
           </form>
         </div>
