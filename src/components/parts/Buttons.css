@@ -10,6 +10,10 @@
     font-size: 1rem;
 }
 
+.btn-sign-up:hover, .btn-get-starter:hover, .btn-copy:hover {
+    opacity: 50%;
+}
+
 .btn-get-starter {
     width: 192px;
     padding: 16px;
@@ -21,6 +25,9 @@
     width: 86px;
     padding: 8px;
     font-size: 0.9rem;
-    
     border-radius: 4px;
+}
+
+.copied {
+    background-color: var(--darkViolet);
 }

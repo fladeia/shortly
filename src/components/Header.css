@@ -12,7 +12,6 @@
   margin: auto;
 }
 
-/* App-nav-desktop */
 .App-header .header-container .App-nav-desktop {
   display: flex;
   justify-content: space-between;
@@ -110,9 +109,13 @@ input {
   color: var(--gray);
 }
 
-.shortIt .btn-shorten-it {
+.btn-shorten-it {
   margin-left: 24px;
   padding: 18px 34px;
   font-weight: 600;
+}
+
+.btn-shorten-it:hover {
+  background-color: #95e7e7;
 }
   

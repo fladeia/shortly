@@ -8,7 +8,7 @@ export function Results({ item1, item2, key }) {
             <div className="requestUrl" >{item1}</div>
             <div className="shortenIt">
                 <div className="shortenUrl">{item2}</div>
-                <ButtonCopy clipboard={item2}></ButtonCopy>
+                <ButtonCopy clipboard={item2} ></ButtonCopy>
             </div>
         </div>
     )
