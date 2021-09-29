@@ -61,6 +61,11 @@
   list-style-type: none;
 }
 
+.nav-items li:hover, .login:hover {
+  cursor: pointer;
+  color: #000;
+}
+
 .hero {
   width: 60%;
   height: 76%;
@@ -117,5 +122,6 @@ input {
 
 .btn-shorten-it:hover {
   background-color: #95e7e7;
+  cursor: pointer;
 }
   

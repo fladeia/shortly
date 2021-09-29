@@ -36,6 +36,11 @@ footer {
     margin-bottom: 8px;
 }
 
+.nav-list li:hover {
+    cursor: pointer;
+    color: var(--cyan);
+}
+
 .nav-list .head {
     font-size: 1rem;
     color: #fff;
@@ -47,4 +52,8 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+}
+
+.social-icon:hover {
+    filter: invert(64%) sepia(75%) saturate(488%) hue-rotate(127deg) brightness(99%) contrast(76%);
 }

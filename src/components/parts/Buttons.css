@@ -10,8 +10,9 @@
     font-size: 1rem;
 }
 
-.btn-sign-up:hover, .btn-get-starter:hover, .btn-copy:hover {
-    opacity: 50%;
+.btn-sign-up:hover, .btn-get-starter:hover {
+    background-color: #95e7e7;
+    cursor: pointer;
 }
 
 .btn-get-starter {
@@ -31,3 +32,8 @@
 .copied {
     background-color: var(--darkViolet);
 }
+
+.btn-copy:hover {
+    opacity: 50%;
+}
+

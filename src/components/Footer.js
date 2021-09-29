@@ -37,10 +37,10 @@ export function Footer() {
                         </ul>
                     </div>
                 <div className="social-icons">
-                    <img src={iconFacebook} alt="facebook"></img>
-                    <img src={iconTwitter} alt="twitter"></img>
-                    <img src={iconPinterest} alt="pinterest"></img>
-                    <img src={iconInstagram} alt="instagram"></img>
+                    <img src={iconFacebook} alt="facebook" className="social-icon"></img>
+                    <img src={iconTwitter} alt="twitter" className="social-icon"></img>
+                    <img src={iconPinterest} alt="pinterest" className="social-icon"></img>
+                    <img src={iconInstagram} alt="instagram" className="social-icon"></img>
                 </div>
                 </div>
             </div>
