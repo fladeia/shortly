@@ -38,7 +38,6 @@ export function Header() {
 
   return (
     <div className="App-container">
-      <div className="content">
 
         <header>
           <nav className="nav-desktop">
@@ -164,7 +163,6 @@ export function Header() {
           </div>
         </footer>
       
-      </div>
     </div>
   )
 }
