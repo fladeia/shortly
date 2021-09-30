@@ -1,6 +1,15 @@
 import React, { useRef, useState } from 'react'
 import './Header.css'
+
 import logo from '../assets/images/logo.svg'
+import iconBrandRrecognition from '../assets/images/icon-brand-recognition.svg'
+import iconDetailedRecords from '../assets/images/icon-detailed-records.svg'
+import iconFullyCustomizable from '../assets/images/icon-fully-customizable.svg'
+import iconFacebook from "../assets/images/icon-facebook.svg"
+import iconTwitter from "../assets/images/icon-twitter.svg"
+import iconPinterest from "../assets/images/icon-pinterest.svg"
+import iconInstagram from "../assets/images/icon-instagram.svg"
+
 import { ButtonSignUp, ButtonGetStarted } from './parts/Buttons'
 import { Results } from './Results'
 
@@ -28,12 +37,13 @@ export function Header() {
   }
 
   return (
-    <div className="App-header">
-      <div className="header-container">
-        <nav className="App-nav-desktop">
-          <div className="logo-items">
+    <div className="App-container">
+      <div className="content">
+      <header>
+        <nav className="nav-desktop">
+          <div className="nav-items">
             <img src={logo} alt="logo" className="logo" />
-            <ol className="nav-items">
+            <ol>
                 <li>Features</li>
                 <li>Pricing</li>
                 <li>Resources</li>
@@ -50,6 +60,9 @@ export function Header() {
           on how your links are performing.</p>
             <ButtonGetStarted></ButtonGetStarted>
         </div>
+      </header>
+
+      <div className="section1">
         <div className="shortIt">
           <form>
             <label htmlFor="name"></label>
@@ -57,7 +70,6 @@ export function Header() {
             <button className="btn-shorten-it" onClick={clickHandler}>Shorten It!</button>
           </form>
         </div>
-        
           {urlList.map((item) => {
             if(item.reqUrl === '') {
               return false
@@ -65,7 +77,92 @@ export function Header() {
               return <div className="shorten" key={item.key}><Results  item1={item.reqUrl} item2={item.shortUrl} ></Results></div>
             }
           })}
-        
+          <div className="section1Title">
+            <span>
+              Advanced Statistics
+            </span>
+            <p>
+              Track how your links are performing across the web with our 
+              advanced statistics dashboard.
+            </p>
+          </div>
+          <div className="cards">
+            <div className="card">
+              <img src={iconBrandRrecognition} alt="icon-recognition"/>
+              <span>
+                Brand Recognition
+              </span>
+              <p>
+                Boost your brand recognition with each click. Generic links don’t 
+                mean a thing. Branded links help instil confidence in your content.
+              </p>
+            </div>
+            <div className="card">
+              <img src={iconDetailedRecords} alt="icon-records"/>
+              <span>
+                Detailed Records
+              </span>
+              <p>
+                Gain insights into who is clicking your links. Knowing when and where 
+                people engage with your content helps inform better decisions.
+              </p>
+            </div>
+            <div className="card">
+              <img src={iconFullyCustomizable} alt="icon-customizable"/>
+              <span>
+                Fully Customizable
+              </span>
+              <p>
+                Improve brand awareness and content discoverability through customizable 
+                links, supercharging audience engagement.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      <div className="section2">
+          <span>Boost your links today</span>
+          <ButtonGetStarted></ButtonGetStarted>
+        </div>
+
+      <footer>
+            <div className="footer">
+                <img src={logo} className="logo" alt="logo"></img>
+                <div className="footer-nav">
+                    <div className="nav-list">
+                        <ul>
+                            <li className="head">Features</li>
+                            <li>Link Shortening</li>
+                            <li>Branded Links</li>
+                            <li>Analitics</li>
+                        </ul>
+                    </div>
+                    <div className="nav-list">
+                        <ul>
+                            <li className="head">Resources</li>
+                            <li>Blog</li>
+                            <li>Developers</li>
+                            <li>Support</li>
+                        </ul>
+                    </div>
+                    <div className="nav-list">
+                        <ul>
+                            <li className="head">Company</li>
+                            <li>About</li>
+                            <li>Our Team</li>
+                            <li>Careers</li>
+                            <li>Contact</li>
+                        </ul>
+                    </div>
+                <div className="social-icons">
+                    <img src={iconFacebook} alt="facebook" className="social-icon"></img>
+                    <img src={iconTwitter} alt="twitter" className="social-icon"></img>
+                    <img src={iconPinterest} alt="pinterest" className="social-icon"></img>
+                    <img src={iconInstagram} alt="instagram" className="social-icon"></img>
+                </div>
+                </div>
+            </div>
+        </footer>
       </div>
     </div>
   )
