@@ -23,26 +23,17 @@ export function Header() {
   const fetchData = async () => {
     const res = await fetch(`https://api.shrtco.de/v2/shorten?url=${searchUrl.current.value}`)
     const data = await res.json()
+    sessionStorage.setItem(searchUrl.current.value, data.result.short_link2)
     setUrlList([...urlList, {key: data.result.code, reqUrl: searchUrl.current.value, shortUrl: data.result.short_link2}])
   }
 
-  // const fetchData = () => {
-  //   fetch(`https://api.shrtco.de/v2/shorten?url=${searchUrl.current.value}`)
-  //   .then(res => res.json())
-  //   .then(data => {
-  //     setUrlList([...urlList, {key: data.result.code, reqUrl: searchUrl.current.value, shortUrl: data.result.short_link2}])
-  //   })
-  // }
+  for (let [key, value] of Object.entries(sessionStorage)) {
+    console.log(key, value);
+  }
 
   const clickHandler = (e) => {
     e.preventDefault()
     searchUrl.current.value === "" ? setInputError('inputErr') : fetchData()
-
-    // if(searchUrl.current.value === "") {
-    //   setInputError('inputErr')
-    // } else {
-    //   fetchData()
-    // }
   }
 
   function cleanInputValue() {
@@ -93,8 +84,16 @@ export function Header() {
                 return false
               } else {
                 return <div className="shorten" key={item.key}><Results  item1={item.reqUrl} item2={item.shortUrl} ></Results></div>
+                // return <div className="shorten" key={item.key}><Results  item1={sessionStorage.key("0")} item2={sessionStorage.getItem(sessionStorage.key("0"))} ></Results></div>
               }
             })}
+            {/* {urlList.map((item) => {
+              if(item.reqUrl === '') {
+                return false
+              } else {
+                return <div className="shorten" key={item.key}><Results  item1={item.reqUrl} item2={item.shortUrl} ></Results></div>
+              }
+            })} */}
             <div className="section-1-title">
               <span>
                 Advanced Statistics
