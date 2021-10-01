@@ -82,9 +82,9 @@ header .hero p {
  
  /* -----------section-1 */
 .section-1 {
+  margin-top: 80px;
   background-color: #eff1f7;
   display: flex;
-  /* justify-content: center; */
   flex-direction: column;
   align-items: center;
 }
@@ -92,6 +92,7 @@ header .hero p {
 .section-1 .shorten-section {
   width: 80%;
   height: 168px;
+  margin-top: -80px;
   display: flex;
   justify-content: center;
   align-items: center;

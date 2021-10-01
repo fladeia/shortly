@@ -18,27 +18,39 @@ export function Header() {
   const searchUrl = useRef('')
   const [ urlList, setUrlList ] = useState([{key: '', reqUrl: '', shortUrl: ''}])
   const [ inputError, setInputError] = useState('')
+  const [ name, setName ] = useState('')
 
-  const fetchData = () => {
-    fetch(`https://api.shrtco.de/v2/shorten?url=${searchUrl.current.value}`)
-    .then(res => res.json())
-    .then(data => {
-      setUrlList([...urlList, {key: data.result.code, reqUrl: searchUrl.current.value, shortUrl: data.result.short_link2}])
-    })
+  const fetchData = async () => {
+    const res = await fetch(`https://api.shrtco.de/v2/shorten?url=${searchUrl.current.value}`)
+    const data = await res.json()
+    setUrlList([...urlList, {key: data.result.code, reqUrl: searchUrl.current.value, shortUrl: data.result.short_link2}])
   }
+
+  // const fetchData = () => {
+  //   fetch(`https://api.shrtco.de/v2/shorten?url=${searchUrl.current.value}`)
+  //   .then(res => res.json())
+  //   .then(data => {
+  //     setUrlList([...urlList, {key: data.result.code, reqUrl: searchUrl.current.value, shortUrl: data.result.short_link2}])
+  //   })
+  // }
 
   const clickHandler = (e) => {
     e.preventDefault()
-    if(searchUrl.current.value === "") {
-      setInputError('inputErr')
-    } else {
-      fetchData()
-    }
+    searchUrl.current.value === "" ? setInputError('inputErr') : fetchData()
+
+    // if(searchUrl.current.value === "") {
+    //   setInputError('inputErr')
+    // } else {
+    //   fetchData()
+    // }
+  }
+
+  function cleanInputValue() {
+    setName('')
   }
 
   return (
     <div className="App-container">
-
         <header>
           <nav className="nav-desktop">
             <div className="nav-items">
@@ -61,11 +73,18 @@ export function Header() {
               <ButtonGetStarted></ButtonGetStarted>
           </div>
         </header>
-
         <div className="section-1">
           <div className="shorten-section">
             <form>
-              <input type="text" className={inputError} id="name" ref={searchUrl} placeholder="Shorten a link here..." />
+              <input 
+                type="text" 
+                className={inputError} 
+                value={name} onChange={e => setName(e.target.value)} 
+                id="name" 
+                ref={searchUrl} 
+                onClick={cleanInputValue} 
+                placeholder="Shorten a link here..." 
+              />
               <button className="btn-shorten-it" onClick={clickHandler}>Shorten It!</button>
             </form>
           </div>
@@ -118,12 +137,10 @@ export function Header() {
               </div>
             </div>
           </div>
-
         <div className="section-2">
             <span>Boost your links today</span>
             <ButtonGetStarted></ButtonGetStarted>
         </div>
-
         <footer>
           <div className="footer-container">
             <img src={logo} className="logo" alt="logo"></img>
@@ -162,7 +179,6 @@ export function Header() {
             </div>
           </div>
         </footer>
-      
     </div>
   )
 }
