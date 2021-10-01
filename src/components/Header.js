@@ -27,10 +27,6 @@ export function Header() {
     setUrlList([...urlList, {key: data.result.code, reqUrl: searchUrl.current.value, shortUrl: data.result.short_link2}])
   }
 
-  for (let [key, value] of Object.entries(sessionStorage)) {
-    console.log(key, value);
-  }
-
   const clickHandler = (e) => {
     e.preventDefault()
     searchUrl.current.value === "" ? setInputError('inputErr') : fetchData()
@@ -39,6 +35,8 @@ export function Header() {
   function cleanInputValue() {
     setName('')
   }
+
+  let test = Object.entries(sessionStorage)
 
   return (
     <div className="App-container">
@@ -79,11 +77,11 @@ export function Header() {
               <button className="btn-shorten-it" onClick={clickHandler}>Shorten It!</button>
             </form>
           </div>
-            {urlList.map((item) => {
+            {test.map((item, index) => {
               if(item.reqUrl === '') {
                 return false
               } else {
-                return <div className="shorten" key={item.key}><Results  item1={item.reqUrl} item2={item.shortUrl} ></Results></div>
+                return <div className="shorten" key={index}><Results  item1={item[0]} item2={item[1]} ></Results></div>
                 // return <div className="shorten" key={item.key}><Results  item1={sessionStorage.key("0")} item2={sessionStorage.getItem(sessionStorage.key("0"))} ></Results></div>
               }
             })}
