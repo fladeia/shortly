@@ -7,12 +7,29 @@
     justify-content: space-between;
 }
 
-.shortenIt {
+.results-container .requestUrl {
+    width: 60%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.results-container .shortenIt {
     width: 240px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
-.shortenUrl {
+.results-container .shortenIt .shortenUrl {
     color: var(--cyan);
+}
+
+@media (max-width: 768px) {
+    .results-container .requestUrl {
+        width: 50%;
+    }
+
+    .section-1 .section-1-cards {
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      }
 }

@@ -327,3 +327,53 @@ footer .footer-container .footer-nav .social-icons {
 footer .footer-container .footer-nav .social-icon:hover {
   filter: invert(64%) sepia(75%) saturate(488%) hue-rotate(127deg) brightness(99%) contrast(76%);
 }
+
+@media (max-width: 1024px) {
+
+  .App-container {
+background-size: 60%;
+  }
+
+  header .hero {
+    width: 56%;
+  }
+
+  header .hero h1 {
+    font-size: 4rem;
+    line-height: 72px;
+  }
+
+  header .hero p {
+    font-size: 1rem;
+  }
+
+  .section-1 .shorten-section .short form input {
+    width: 70%;
+  }
+}
+
+@media (max-width: 768px) {
+
+  header .nav-desktop .nav-items {
+    width: 400px;
+    display: flex;
+  }
+
+  header .nav-desktop .login-singUp {
+    justify-content: space-around;
+  }
+
+  header .hero {
+    width: 48%;
+  }
+
+  header .hero h1 {
+    font-size: 3rem;
+    line-height: 56px;
+  }
+
+  .section-1 .shorten-section .short form input {
+    width: 60%;
+  }
+
+}
