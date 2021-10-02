@@ -94,6 +94,7 @@ header .hero p {
   height: 168px;
   margin-top: -80px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   border-radius: 8px;
@@ -102,28 +103,49 @@ header .hero p {
   background-color: var(--darkViolet);
 }
 
-.section-1 .shorten-section form {
+.section-1 .shorten-section .short {
+  width: 90%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr 0.5fr;
+}
+
+.section-1 .shorten-section .short form {
   display: flex;
   justify-content: space-between;
-  width: 90%;
+  align-items: flex-end;
 }
 
-.section-1 .shorten-section form input {
+.section-1 .shorten-section .short form input {
   width: 80%;
   color: var(--gray);
+  border: none;
 }
 
-.section-1 .shorten-section form input, .btn-shorten-it {
+.section-1 .shorten-section .short form input, .btn-shorten-it {
   padding: 18px;
   border-radius: 8px;
-  border: none;
   font-size: 1.2rem;
   letter-spacing: 2px;
 }
 
-.section-1 .shorten-section form input .inputErr {
-  border:1px solid red;
+/* error message */
+.section-1 .shorten-section .short form .inputErr {
+  border: 2px solid var(--red);
 }
+
+.section-1 .shorten-section form .inputErr::placeholder {
+  color: var(--red);
+}
+
+.section-1 .shorten-section .short span {
+  color: var(--red);
+}
+
+.section-1 .shorten-section .short .erro-msg {
+  display: none;
+}
+/* error message */
 
 .section-1 .shorten-section form .btn-shorten-it {
   padding: 18px 34px;

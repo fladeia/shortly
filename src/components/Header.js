@@ -18,6 +18,7 @@ export function Header() {
   const searchUrl = useRef('')
   const [ urlList, setUrlList ] = useState([{key: '', reqUrl: '', shortUrl: ''}])
   const [ inputError, setInputError] = useState('')
+  const [ errorMsg, setErrorMsg ] = useState('erro-msg')
   const [ name, setName ] = useState('')
 
   const fetchData = async () => {
@@ -29,7 +30,15 @@ export function Header() {
 
   const clickHandler = (e) => {
     e.preventDefault()
-    searchUrl.current.value === "" ? setInputError('inputErr') : fetchData()
+
+    if(searchUrl.current.value === "") {
+      setInputError('inputErr')
+      setErrorMsg('')
+    } else {
+      setInputError('')
+      setErrorMsg('erro-msg')
+      fetchData()
+    }
   }
 
   function cleanInputValue() {
@@ -64,34 +73,29 @@ export function Header() {
         </header>
         <div className="section-1">
           <div className="shorten-section">
-            <form>
-              <input 
-                type="text" 
-                className={inputError} 
-                value={name} onChange={e => setName(e.target.value)} 
-                id="name" 
-                ref={searchUrl} 
-                onClick={cleanInputValue} 
-                placeholder="Shorten a link here..." 
-              />
-              <button className="btn-shorten-it" onClick={clickHandler}>Shorten It!</button>
-            </form>
+            <div className="short">
+              <form>
+                  <input 
+                    type="text" 
+                    className={inputError} 
+                    value={name} onChange={e => setName(e.target.value)} 
+                    id="name" 
+                    ref={searchUrl} 
+                    onClick={cleanInputValue} 
+                    placeholder="Shorten a link here..." 
+                  />
+                  <button className="btn-shorten-it" onClick={clickHandler}>Shorten It!</button>
+                </form>
+                <span className={errorMsg} >Please add a link</span>
+            </div>
           </div>
             {test.map((item, index) => {
               if(item.reqUrl === '') {
                 return false
               } else {
                 return <div className="shorten" key={index}><Results  item1={item[0]} item2={item[1]} ></Results></div>
-                // return <div className="shorten" key={item.key}><Results  item1={sessionStorage.key("0")} item2={sessionStorage.getItem(sessionStorage.key("0"))} ></Results></div>
               }
             })}
-            {/* {urlList.map((item) => {
-              if(item.reqUrl === '') {
-                return false
-              } else {
-                return <div className="shorten" key={item.key}><Results  item1={item.reqUrl} item2={item.shortUrl} ></Results></div>
-              }
-            })} */}
             <div className="section-1-title">
               <span>
                 Advanced Statistics
