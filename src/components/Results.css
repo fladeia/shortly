@@ -24,12 +24,4 @@
     color: var(--cyan);
 }
 
-@media (max-width: 768px) {
-    .results-container .requestUrl {
-        width: 50%;
-    }
 
-    .section-1 .section-1-cards {
-        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-      }
-}
