@@ -97,36 +97,37 @@ header .hero p {
   width: 80%;
   height: 168px;
   margin-top: -80px;
+  border-radius: 8px;
+  background-image: url('../assets/images/bg-shorten-desktop.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: var(--darkViolet);
+
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  border-radius: 8px;
-  background-image: url('../assets/images/bg-shorten-desktop.svg');
-  background-repeat: no-repeat;
-  background-color: var(--darkViolet);
 }
 
-.section-1 .shorten-section .short {
-  width: 90%;
-  height: 100%;
+.section-1 .shorten-section form {
+  margin-inline: 12px;
   display: grid;
-  grid-template-rows: 1fr 0.5fr;
+  grid-template-rows: 80% 20px;
+  grid-template-areas: 
+  'input input input input btn'
+  'span span span span span'
+  ;
+  gap: 12px;
+  /* align-items: flex-end; */
 }
 
-.section-1 .shorten-section .short form {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-
-.section-1 .shorten-section .short form input {
-  width: 80%;
+.section-1 .shorten-section form input {
   color: var(--gray);
   border: none;
+  grid-area: input;
+
 }
 
-.section-1 .shorten-section .short form input, .btn-shorten-it {
+.section-1 .shorten-section form input, .btn-shorten-it {
   padding: 18px;
   border-radius: 8px;
   font-size: 1.2rem;
@@ -134,7 +135,7 @@ header .hero p {
 }
 
 /* error message */
-.section-1 .shorten-section .short form .inputErr {
+.section-1 .shorten-section form .inputErr {
   border: 2px solid var(--red);
 }
 
@@ -142,11 +143,13 @@ header .hero p {
   color: var(--red);
 }
 
-.section-1 .shorten-section .short span {
+.section-1 .shorten-section span {
   color: var(--red);
+  grid-area: span;
+
 }
 
-.section-1 .shorten-section .short .erro-msg {
+.section-1 .shorten-section .erro-msg {
   display: none;
 }
 /* error message */
@@ -157,6 +160,8 @@ header .hero p {
   color: #fff;
   border: none;
   background-color: var(--cyan);
+  grid-area: btn;
+
 }
 
 .section-1 .shorten-section form .btn-shorten-it:hover {
@@ -365,6 +370,7 @@ background-size: 60%;
 
   header {
     width: 85%;
+    height: 90vh;
   }
 
   header .nav-desktop {
@@ -404,7 +410,7 @@ background-size: 60%;
 
   header .hero {
     width: 100%;
-    height: 78%;
+    height: 80%;
     justify-content: flex-end;
     align-items: center;
     text-align: center;
@@ -417,11 +423,29 @@ background-size: 60%;
   }
 
   header .hero p {
+    width: 90%;
     margin-top: 12px;
     font-size: 1rem;
   }
 
+  .section-1 .shorten-section {
+    width: 90%;
+    background-image: url('../assets/images/bg-boost-mobile.svg');
+
+  }
+
+  .section-1 .shorten-section form {
+    grid-template-rows: 1fr 0.5fr 1fr;
+    grid-template-areas: 
+    'input'
+    'span'
+    'btn'
+    ;
+    gap: 0;
+  }
 
 
-
+  .section-1 .shorten-section form input, .btn-shorten-it {
+    padding: 16px;
+  }
 }

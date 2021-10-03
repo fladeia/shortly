@@ -96,21 +96,19 @@ export function Header() {
         </header>
         <div className="section-1">
           <div className="shorten-section">
-            <div className="short">
               <form>
-                  <input 
-                    type="text" 
-                    className={inputError} 
-                    value={name} onChange={e => setName(e.target.value)} 
-                    id="name" 
-                    ref={searchUrl} 
-                    onClick={cleanInputValue} 
-                    placeholder="Shorten a link here..." 
-                  />
-                  <button className="btn-shorten-it" onClick={clickHandler}>Shorten It!</button>
-                </form>
-                <span className={errorMsg} >Please add a link</span>
-            </div>
+                <input 
+                  type="text" 
+                  className={`${inputError} input`} 
+                  value={name} onChange={e => setName(e.target.value)} 
+                  id="name" 
+                  ref={searchUrl} 
+                  onClick={cleanInputValue} 
+                  placeholder="Shorten a link here..." 
+                />
+                <button className="btn-shorten-it btn" onClick={clickHandler}>Shorten It!</button>
+                <span className={`${errorMsg} span`} >Please add a link</span>
+              </form>
           </div>
             {test.map((item, index) => {
               if(item.reqUrl === '') {
