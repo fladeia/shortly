@@ -128,7 +128,9 @@ export function Header() {
             </div>
             <div className="section-1-cards">
               <div className="section-1-card">
-                <img src={iconBrandRrecognition} alt="icon-recognition"/>
+                <div className="bg-img">
+                  <img src={iconBrandRrecognition} alt="icon-recognition"/>
+                </div>
                 <span>
                   Brand Recognition
                 </span>
@@ -138,7 +140,9 @@ export function Header() {
                 </p>
               </div>
               <div className="section-1-card">
-                <img src={iconDetailedRecords} alt="icon-records"/>
+                <div className="bg-img" >
+                  <img src={iconDetailedRecords} alt="icon-records"/>
+                </div>
                 <span>
                   Detailed Records
                 </span>
@@ -148,7 +152,9 @@ export function Header() {
                 </p>
               </div>
               <div className="section-1-card">
-                <img src={iconFullyCustomizable} alt="icon-customizable"/>
+                <div className="bg-img" >
+                  <img src={iconFullyCustomizable} alt="icon-customizable"/>
+                </div>  
                 <span>
                   Fully Customizable
                 </span>
