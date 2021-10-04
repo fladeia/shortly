@@ -93,7 +93,7 @@ header .hero p {
 
 .section-1 .shorten-section {
   width: 80%;
-  height: 168px;
+  /* height: 168px; */
   margin-top: -80px;
   border-radius: 8px;
   background-image: url('../assets/images/bg-shorten-desktop.svg');
@@ -399,6 +399,7 @@ footer .footer-container .footer-nav .social-icon:hover {
     'btn'
     ;
     gap: 0;
+    margin: 24px;
   }
 
   .section-1 .shorten {
@@ -428,11 +429,14 @@ footer .footer-container .footer-nav .social-icon:hover {
   }
 
   .section-1 .section-1-cards .section-1-card {
+    height: 280px;
     align-items: center;
+    padding-bottom: 40px;
     margin-top: 24px;
   }
 
   .section-1 .section-1-cards .section-1-card p {
+    width: 85%;
     text-align: center;
   }
 
