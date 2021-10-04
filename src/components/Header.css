@@ -369,7 +369,6 @@ background-size: 60%;
 
   header {
     width: 85%;
-    height: 100vh;
   }
 
   header .nav-desktop {
@@ -409,7 +408,7 @@ background-size: 60%;
 
   header .hero {
     width: 100%;
-    height: 78%;
+    height: 85%;
     justify-content: flex-end;
     align-items: center;
     text-align: center;
@@ -428,7 +427,7 @@ background-size: 60%;
   }
 
   .section-1 {
-    margin-top: 48px;
+    margin-top: 140px;
   }
 
   .section-1 .shorten-section {
@@ -466,7 +465,7 @@ background-size: 60%;
   }
 
   .section-1 .section-1-title p {
-    width: 80%;
+    width: 85%;
     font-size: 1rem;
     margin: auto;
   }
@@ -508,7 +507,7 @@ background-size: 60%;
 }
 
 .section-2 {
-  height: 250px;
+  height: 290px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -524,7 +523,7 @@ background-size: 60%;
 }
 
 footer {
-  height: 75vh;
+  height: 90vh;
 }
 
   footer .footer-container {
