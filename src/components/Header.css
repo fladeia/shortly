@@ -187,6 +187,7 @@ header .hero p {
 }
 
 .section-1 .section-1-cards {
+  width: 80%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 20px;
@@ -194,7 +195,7 @@ header .hero p {
 }
 
 .section-1 .section-1-cards .section-1-card {
-  height: 234px;
+  height: 280px;
   border-radius: 8px;
   background-color: #fff;
   position: relative;
@@ -202,6 +203,20 @@ header .hero p {
   flex-direction: column;
   justify-content: flex-end;
   padding: 24px;
+}
+
+.section-1 .section-1-cards .section-1-card:nth-child(1)::after, .section-1-card:nth-child(2)::after {
+  content: '';
+  width: 20px;
+  height: 8px;
+  background-color: var(--cyan);
+  position: absolute;
+  right: -20px;
+  top: 154px;
+}
+
+.section-1 .section-1-cards .section-1-card:nth-child(2)::after {
+  top: 104px;
 }
 
 .section-1 .section-1-cards .section-1-card:nth-child(1) {
@@ -328,7 +343,7 @@ footer .footer-container .footer-nav .social-icon:hover {
   }
 }
 
-@media (max-width: 996px) {
+@media (max-width: 988px) {
   .App-container {
     background-size: 70%;
     background-position: top 174px right -145px;
@@ -346,6 +361,31 @@ footer .footer-container .footer-nav .social-icon:hover {
   header .hero p {
     width: 80%;
     font-size: 1rem;
+  }
+
+  .section-1 .section-1-cards {
+    grid-template-columns: repeat(auto-fit, minmax(390px, 1fr));
+  }
+  
+  .section-1 .section-1-cards .section-1-card:nth-child(1) {
+    margin-top: 100px;
+  }
+  .section-1 .section-1-cards .section-1-card:nth-child(2) {
+    margin-top: 100px;
+  }
+  .section-1 .section-1-cards .section-1-card:nth-child(3) {
+    margin-top: 100px;
+  }
+  
+  .section-1 .section-1-cards .section-1-card:nth-child(1)::after, .section-1-card:nth-child(2)::after {
+    width: 8px;
+    height: 100px;
+    right: 50%;
+    top: 280px;
+  }
+
+  .section-1 .section-1-cards .section-1-card:nth-child(2)::after {
+    top: 280px;
   }
 }
 
@@ -442,6 +482,14 @@ footer .footer-container .footer-nav .social-icon:hover {
     color: #fff;
   }
 
+  .section-1 .section-1-cards .section-1-card:nth-child(1)::after, .section-1-card:nth-child(2)::after {
+    top: 300px;
+  }
+
+  .section-1 .section-1-cards .section-1-card:nth-child(2)::after {
+    top: 300px;
+  }
+
   footer .footer-container {
     flex-direction: column;
   }
@@ -511,7 +559,7 @@ footer .footer-container .footer-nav .social-icon:hover {
   }
 
   .section-1 .section-1-cards .section-1-card {
-    height: 280px;
+    height: 300px;
     align-items: center;
     padding-bottom: 40px;
     margin-top: 24px;

@@ -20,7 +20,7 @@ export function Header() {
   const [ inputError, setInputError] = useState('')
   const [ errorMsg, setErrorMsg ] = useState('erro-msg')
   const [ name, setName ] = useState('')
-  const [ menuToggle, setMenuToggle ] = useState(true)
+  const [ menuToggle, setMenuToggle ] = useState(false)
 
   const fetchData = async () => {
     const res = await fetch(`https://api.shrtco.de/v2/shorten?url=${searchUrl.current.value}`)
