@@ -37,3 +37,16 @@
     opacity: 50%;
 }
 
+@media (max-width: 768px) {
+    .btn-copy {
+        width: 100%;
+    }
+
+    .btn-get-starter {
+        margin-top: 24px;
+    }
+
+    .btn-sign-up {
+        width: 100%;
+    }
+}
