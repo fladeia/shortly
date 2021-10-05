@@ -1,5 +1,5 @@
-import './Results.css'
 import { ButtonCopy } from './parts/Buttons'
+import './results.css'
 
 export function Results({ item1, item2, key }) {
       return (
