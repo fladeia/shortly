@@ -20,12 +20,17 @@ export function Header() {
   const [ inputError, setInputError] = useState('')
   const [ errorMsg, setErrorMsg ] = useState('erro-msg')
   const [ name, setName ] = useState('')
+  const [ menuToggle, setMenuToggle ] = useState(true)
 
   const fetchData = async () => {
     const res = await fetch(`https://api.shrtco.de/v2/shorten?url=${searchUrl.current.value}`)
     const data = await res.json()
     sessionStorage.setItem(searchUrl.current.value, data.result.short_link2)
     setUrlList([...urlList, {key: data.result.code, reqUrl: searchUrl.current.value, shortUrl: data.result.short_link2}])
+  }
+
+  const handleMenu = () => {
+    setMenuToggle(!menuToggle)
   }
 
   const clickHandler = (e) => {
@@ -69,21 +74,24 @@ export function Header() {
           <nav className="nav-mobile">
             <div className="nav-items">
               <img src={logo} alt="logo" className="logo" />
-              <div className="hamburger-menu">
+              <div className="hamburger-menu" onClick={handleMenu}>
                 <div className="hamburger-1"></div>
                 <div className="hamburger-2"></div>
                 <div className="hamburger-3"></div>
               </div>
-              {/* <ol>
+            </div>
+            <div className={`${menuToggle ? 'menuOn' : null} menu`}>
+              <ol>
                   <li>Features</li>
                   <li>Pricing</li>
                   <li>Resources</li>
-              </ol> */}
+              </ol>
+              <div className="menuDiv"></div>
+              <div className="login-singUp">
+                <span className="login">Login</span>
+                <ButtonSignUp></ButtonSignUp>
+              </div>
             </div>
-            {/* <div className="login-singUp">
-              <span className="login">Login</span>
-              <ButtonSignUp></ButtonSignUp>
-            </div> */}
           </nav>
 
           <div className="hero">
