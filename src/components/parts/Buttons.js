@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import './Buttons.css'
+import './buttons.css'
 
 function ButtonSignUp() {
     return <button className="btn-sign-up" >Sign Up</button>
