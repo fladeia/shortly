@@ -12,3 +12,4 @@ export function Results({ item1, item2, key }) {
         </div>
     )
 }
+
