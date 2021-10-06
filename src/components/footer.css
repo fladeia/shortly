@@ -1,4 +1,6 @@
 footer {
+  max-width: 1440px;
+  margin: auto;
   background-color: var(--veryDarkViolet);
   color: #fff;
   display: flex;
