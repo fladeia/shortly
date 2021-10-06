@@ -24,7 +24,6 @@
     color: var(--cyan);
 }
 
-
 @media (max-width: 768px) {
     .shorten .results-container {
         flex-direction: column;
@@ -32,8 +31,6 @@
 
     .shorten .results-container .requestUrl {
         width: 100%;
-        /* padding-bottom: 12px; */
-
         display: flex;
         flex-direction: column;
     }
@@ -54,5 +51,4 @@
     .shorten .results-container .shortenIt .shortenUrl {
         padding: 12px 0;
     }
-    
 }
