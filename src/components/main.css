@@ -83,8 +83,8 @@
 
 .section-1 .section-1-title {
   text-align: center;
-  width: 40%;
-  margin-top: 200px;
+  width: 30%;
+  margin-top: 100px;
 }
 
 .section-1 .section-1-title span {
@@ -94,6 +94,7 @@
 }
 
 .section-1 .section-1-title p {
+  margin-top: 12px;
   font-size: 1.1rem;
   font-weight: 500;
   color: var(--grayishViolet);
@@ -103,7 +104,7 @@
   width: 80%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-gap: 20px;
+  grid-gap: 30px;
   margin-bottom: 90px
 }
 
@@ -115,16 +116,16 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 24px;
+  padding: 30px;
 }
 
 .section-1 .section-1-cards .section-1-card:nth-child(1)::after, .section-1-card:nth-child(2)::after {
   content: '';
-  width: 20px;
+  width: 30px;
   height: 8px;
   background-color: var(--cyan);
   position: absolute;
-  right: -20px;
+  right: -30px;
   top: 154px;
 }
 
@@ -166,7 +167,8 @@
 }
 
 .section-1 .section-1-cards .section-1-card p {
-  font-size: 0.9rem;
+  width: 92%;
+  font-size: 1rem;
   font-weight: 500;
   color: var(--gray);
 }
@@ -180,6 +182,7 @@
   align-items: center;
   background-image: url('../assets/images/bg-boost-desktop.svg');
   background-repeat: no-repeat;
+  background-size: cover;
   background-color: var(--darkViolet);
 }
 
@@ -209,6 +212,7 @@
     height: 100px;
     right: 50%;
     top: 280px;
+    transform: translate(50%);
   }
 
   .section-1 .section-1-cards .section-1-card:nth-child(2)::after {
@@ -224,34 +228,15 @@
 
 @media (max-width: 768px) {
   .section-1 .section-1-cards .section-1-card:nth-child(1)::after, .section-1-card:nth-child(2)::after {
-    top: 300px;
+    top: 290px;
   }
 
   .section-1 .section-1-cards .section-1-card:nth-child(2)::after {
-    top: 300px;
-  }
-
-  header .hero {
-    width: 100%;
-    height: 120vh;
-    justify-content: flex-end;
-    align-items: center;
-    text-align: center;
-  }
-
-  header .hero h1 {
-    font-size: 2.5rem;
-    line-height: 48px;
-  }
-
-  header .hero p {
-    width: 90%;
-    margin-top: 12px;
-    font-size: 1rem;
+    top: 290px;
   }
 
   .section-1 {
-    margin-top: 140px;
+    margin-top: 172px;
   }
 
   .section-1 .shorten-section {
@@ -283,7 +268,7 @@
   }
 
   .section-1 .section-1-title p {
-    width: 85%;
+    width: 75%;
     font-size: 1rem;
     margin: auto;
   }
@@ -296,27 +281,27 @@
   }
 
   .section-1 .section-1-cards .section-1-card {
-    height: 300px;
+    height: 290px;
     align-items: center;
-    padding-bottom: 40px;
+    padding-bottom: 48px;
     margin-top: 24px;
   }
 
   .section-1 .section-1-cards .section-1-card p {
-    width: 85%;
+    width: 92%;
     text-align: center;
   }
 
   .section-1 .section-1-cards .section-1-card:nth-child(1) {
-    margin-top: 100px;
+    margin-top: 85px;
   }
   
   .section-1 .section-1-cards .section-1-card:nth-child(2) {
-    margin-top: 100px;
+    margin-top: 90px;
   }
   
   .section-1 .section-1-cards .section-1-card:nth-child(3) {
-    margin-top: 100px;
+    margin-top: 90px;
   }
 
   .section-2 {
@@ -332,7 +317,7 @@
   }
 
   .section-2 span {
-    font-size: 1.5rem;  
+    font-size: 1.8rem;  
   }
 }
 

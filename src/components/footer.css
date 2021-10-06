@@ -31,7 +31,7 @@ footer .footer-container .footer-nav ul {
 footer .footer-container .footer-nav .nav-list ul .head {
   font-size: 1rem;
   color: #fff;
-  margin-bottom: 12px;
+  margin-bottom: 18px;
 }
 
 footer .footer-container .footer-nav .nav-list ul li {
@@ -58,7 +58,7 @@ footer .footer-container .footer-nav .social-icon:hover {
 
 @media (max-width: 768px) {
   footer {
-    height: 100vh;
+    height: 80vh;
   }
 
   footer .footer-container {
@@ -83,7 +83,7 @@ footer .footer-container .footer-nav .social-icon:hover {
   }
 
   footer .footer-container .footer-nav .nav-list:nth-child(3) {
-    margin-bottom: 36px;
+    margin-bottom: 52px;
   }
 
   footer .footer-container .footer-nav .social-icons {
