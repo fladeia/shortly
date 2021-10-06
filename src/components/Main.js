@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useState } from 'react'
 import { Results } from './Results'
 import { ButtonGetStarted } from './parts/Buttons'
 import iconBrandRrecognition from '../assets/images/icon-brand-recognition.svg'
@@ -7,35 +7,35 @@ import iconFullyCustomizable from '../assets/images/icon-fully-customizable.svg'
 import './main.css'
 
 export const Main = () => {
-    const searchUrl = useRef('')
-    const [ urlList, setUrlList ] = useState([{key: '', reqUrl: '', shortUrl: ''}])
     const [ inputError, setInputError] = useState('')
     const [ errorMsg, setErrorMsg ] = useState('erro-msg')
-    const [ name, setName ] = useState('')
+    const [ searchInput, setSearchInput ] = useState('')
     let listUrl = Object.entries(sessionStorage)
   
     const fetchData = async () => {
-      const res = await fetch(`https://api.shrtco.de/v2/shorten?url=${searchUrl.current.value}`)
+      const res = await fetch(`https://api.shrtco.de/v2/shorten?url=${searchInput}`)
       const data = await res.json()
-      sessionStorage.setItem(searchUrl.current.value, data.result.short_link2)
-      setUrlList([...urlList, {key: data.result.code, reqUrl: searchUrl.current.value, shortUrl: data.result.short_link2}])
+      sessionStorage.setItem(searchInput, data.result.short_link2)
+        await setSearchInput('')
     }
   
     const clickHandler = (e) => {
       e.preventDefault()
   
-      if(searchUrl.current.value === "") {
+      if(searchInput === "") {
         setInputError('inputErr')
         setErrorMsg('')
       } else {
         setInputError('')
         setErrorMsg('erro-msg')
         fetchData()
-      }
     }
-  
-    function cleanInputValue() {
-      setName('')
+}
+
+function cleanInputValue() {
+    setSearchInput('')
+    setInputError('')
+    setErrorMsg('erro-msg')
     }
 
     return (
@@ -46,9 +46,8 @@ export const Main = () => {
                         <input 
                             type="text" 
                             className={`${inputError} input`} 
-                            value={name} onChange={e => setName(e.target.value)} 
-                            id="name" 
-                            ref={searchUrl} 
+                            value={searchInput} 
+                            onChange={e => setSearchInput(e.target.value)} 
                             onClick={cleanInputValue} 
                             placeholder="Shorten a link here..." 
                         />
