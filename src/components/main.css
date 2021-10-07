@@ -9,6 +9,7 @@
   
 .section-1 .shorten-section {
   width: 80%;
+  height: 172px;
   margin-top: -80px;
   border-radius: 8px;
   background-image: url('../assets/images/bg-shorten-desktop.svg');
@@ -17,25 +18,21 @@
   background-color: var(--darkViolet);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
 }
   
 .section-1 .shorten-section form {
-  margin: 24px;
-  display: grid;
-  grid-template-rows: 80% 20px;
-  grid-template-areas: 
-  'input input input input btn'
-  'span span span span span'
-  ;
-  gap: 12px;
-  align-items: flex-end;
+  width: 90%;
+  display: flex;
+  margin-top: 56px;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
-  
+
 .section-1 .shorten-section form input {
+  width: 80%;
   color: var(--gray);
   border: none;
-  grid-area: input;
 }
 
 .section-1 .shorten-section form input, .btn-shorten-it {
@@ -43,6 +40,19 @@
   border-radius: 8px;
   font-size: 1.2rem;
   letter-spacing: 2px;
+}
+
+.section-1 .shorten-section form .btn-shorten-it {
+  padding: 18px 34px;
+  font-weight: 600;
+  color: #fff;
+  border: none;
+  background-color: var(--cyan);
+}
+
+.section-1 .shorten-section form .btn-shorten-it:hover {
+  background-color: #95e7e7;
+  cursor: pointer;
 }
 
 /* error message */
@@ -56,27 +66,12 @@
 
 .section-1 .shorten-section span {
   color: var(--red);
-  grid-area: span;
 }
 
 .section-1 .shorten-section .erro-msg {
   display: none;
 }
-
 /* error message */
-.section-1 .shorten-section form .btn-shorten-it {
-  padding: 18px 34px;
-  font-weight: 600;
-  color: #fff;
-  border: none;
-  background-color: var(--cyan);
-  grid-area: btn;
-}
-
-.section-1 .shorten-section form .btn-shorten-it:hover {
-  background-color: #95e7e7;
-  cursor: pointer;
-}
 
 .section-1 .shorten {
   width: 80%;
@@ -245,16 +240,31 @@
   .section-1 .shorten-section {
     width: 90%;
     background-image: url('../assets/images/bg-boost-mobile.svg');
+    justify-content: center;
+    height: auto;
+    padding: 24px;
   }
 
   .section-1 .shorten-section form {
-    grid-template-rows: 1fr 0.5fr 1fr;
-    grid-template-areas: 
-    'input'
-    'span'
-    'btn'
-    ;
-    gap: 0;
+    margin: 0;
+    flex-direction: column;
+  }
+  
+  .section-1 .shorten-section form input {
+    width: 100%;
+    margin-bottom: 6px;
+    order: 1;
+  }
+
+  .section-1 .shorten-section form span {
+    font-style: italic;
+    font-size: 0.8rem;
+    order: 2;
+  }
+
+  .section-1 .shorten-section .btn-shorten-it {
+    margin-top: 6px;
+    order: 3;
   }
 
   .section-1 .shorten {
@@ -324,3 +334,16 @@
   }
 }
 
+@media (max-width: 440px) {
+  .section-1 .section-1-cards .section-1-card {
+    padding-bottom: 24px;
+  }
+
+  .section-1 .section-1-cards .section-1-card span {
+    font-size: 1.1rem;
+  }
+  
+  .section-1 .section-1-cards .section-1-card p {
+    font-size: 0.9rem;
+  }
+}
