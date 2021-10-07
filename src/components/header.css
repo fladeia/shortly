@@ -124,7 +124,7 @@ header .hero p {
 
   header {
     width: 85%;
-    height: 90vh;
+    height: 100vh;
   }
 
   header .nav-desktop {
@@ -229,6 +229,10 @@ header .hero p {
 }
 
 @media (max-width: 425px) {
+  header {
+    height: 90vh;
+  }
+
   header .hero {
     height: 110vh;
   }
